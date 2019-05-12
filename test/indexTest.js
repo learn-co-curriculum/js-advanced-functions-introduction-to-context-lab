@@ -1,40 +1,37 @@
 describe("The payroll system", function () {
   describe("populates a record from an Array", function () {
-    let testEmployee;
-    let testArray = ["Gray", "Worm", "Security", 1]
-
     it("has a function called createEmployeeRecord", function () {
       expect(createEmployeeRecord).to.exist
     })
 
     describe("createEmployeeRecord", function () {
       it("populates a firstName field from the 0th element", function () {
-        let testEmployee = createEmployeeRecord(testArray)
+        let testEmployee = createEmployeeRecord(["Gray", "Worm", "Security", 1])
         expect(testEmployee.firstName).to.eq("Gray")
       })
 
       it("populates a familyName field from the 1th element", function () {
-        let testEmployee = createEmployeeRecord(testArray)
+        let testEmployee = createEmployeeRecord(["Gray", "Worm", "Security", 1])
         expect(testEmployee.familyName).to.eq("Worm")
       })
 
       it("populates a title field from the 2th element", function () {
-        let testEmployee = createEmployeeRecord(testArray)
+        let testEmployee = createEmployeeRecord(["Gray", "Worm", "Security", 1])
         expect(testEmployee.title).to.eq("Security")
       })
 
       it("populates a payPerHour field from the 3th element", function () {
-        let testEmployee = createEmployeeRecord(testArray)
+        let testEmployee = createEmployeeRecord(["Gray", "Worm", "Security", 1])
         expect(testEmployee.payPerHour).to.eq(1)
       })
 
       it("initializes a field, timeInEvents, to hold an empty Array", function () {
-        let testEmployee = createEmployeeRecord(testArray)
+        let testEmployee = createEmployeeRecord(["Gray", "Worm", "Security", 1])
         expect(testEmployee.timeInEvents).to.eql([])
       })
 
       it("initializes a field, timeOutEvents, to hold an empty Array", function () {
-        let testEmployee = createEmployeeRecord(testArray)
+        let testEmployee = createEmployeeRecord(["Gray", "Worm", "Security", 1])
         expect(testEmployee.timeOutEvents).to.eql([])
       })
     })
@@ -161,6 +158,7 @@ describe("The payroll system", function () {
       })
     })
   })
+
   describe("Given an employee record with MULTIPLE date-matched timeInEvent and timeOutEvent", function () {
 
     it("allWagesFor aggregates all the dates' wages and adds them together", function () {
