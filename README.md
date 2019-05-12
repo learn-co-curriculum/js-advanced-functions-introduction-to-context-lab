@@ -39,10 +39,10 @@ you see the terms.
     all."`
 
 Printing up these definitions is what _most_ JavaScript documentation does.
-People accept these as a truth and shrug and muddle their way through. We think
+People accept these as truth and shrug and muddle their way through. We think
 it can be done better.
 
-In this lesson we're going to practice what we've already learned about
+In this lab, we're going to practice what we've already learned about
 JavaScript to build a time-card application, guided by tests. This application
 is an example of a "record-oriented" application, which we'll explain below.
 Once we have a working application, we'll show how execution context, `this`,
@@ -53,7 +53,7 @@ With these capabilities, we hope you'll learn to love functions even more
 
 ## Define the Term "Record"
 
-Back in the old days (1960s and earlier) computers didn't have much memory.
+Back in the old days (the 1960s and earlier) computers didn't have much memory.
 Records were stored on, if you can even believe this, small paper cards called
 punch-cards. They looked like this:
 
@@ -103,14 +103,14 @@ little computers in a cloud, hand them each a bundle of records, and get
 answers back is _cutting-edge_.
 
 In fact, a program to do `map` and `reduce` operations at scale on a cloud was
-standardized in the 2000's. Guess what it's called? [`mapReduce`][mapreduce]
+standardized in the 2000s. Guess what it's called? [`mapReduce`][mapreduce]
 &mdash; and you should know why. The "Go" programming language, argued by some
 to be the next Java as of 2019, is built around building and processing records
 at scale. Record-Oriented Programming is not likely to go away any time soon.
 
 ## Lab
 
-In this lab we're going to build a time-card and payroll application using the
+In this lab, we're going to build a time-card and payroll application using the
 record-oriented approach. 
 
 The tests guide you to implementing a time card system: when someone enters the
@@ -141,7 +141,7 @@ Put your code in `index.js`.
 
 ## Conclusion
 
-Congratulations! At the end of this lab you should have built several
+Congratulations! At the end of this lab, you should have built several
 incredibly simple functions that leveraged `map` and `reduce` to transform and
 aggregate data. Take a look at your code and see where you might be repeating
 yourself. Finding these repetitions will be where we can bring in the
