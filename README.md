@@ -111,7 +111,7 @@ at scale. Record-Oriented Programming is not likely to go away any time soon.
 ## Lab
 
 In this lab, we're going to build a time-card and payroll application using the
-record-oriented approach. 
+record-oriented approach.
 
 The tests guide you to implementing a time card system: when someone enters the
 company's state of the art technical office, the employee has to insert their
@@ -132,7 +132,10 @@ For simplicity's sake, we'll make these assumptions:
 The lab tests will guide you toward a solution. Keep in mind, the goal is to
 understand how to "grow" an application in "record-oriented" fashion in
 JavaScript, _as well_ as pass the lab. Make sure you're learning about this app
-design while you pass the solutions.
+design while you pass the solutions. When you encounter a failing lab, look at
+how the test is calling the function that's missing or failing: how did it call
+the function, what arguments did it pass? What kind of thing did it expect
+back?
 
 Take advantage of your collection-processing strengths that you trained up over
 the last few lessons.
