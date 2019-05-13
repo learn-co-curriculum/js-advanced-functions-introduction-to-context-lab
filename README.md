@@ -27,12 +27,12 @@ you see the terms.
    `()`. You provide a new execution context as the first argument,
    traditionally called `thisArg`, and the arguments you want to send to the
    function after the `thisArg`. An invocation of `call` looks like:
-   `Calculator.sum.call(multilingualMessages, 1, 2)
+   `Calculator.sum.call(multilingualMessages, 1, 2)`
 3. `apply`: This is a method _on a function_ which calls the function, just like
    `()`. You provide a new execution context as the first argument,
    traditionally called `thisArg`, and the arguments you want to send to the
    function ***as an `Array`*** after the `thisArg`. An invocation of `call`
-   looks like: `Calculator.sum.apply(multilingualMessages, [1, 2])
+   looks like: `Calculator.sum.apply(multilingualMessages, [1, 2])`
 4. `bind`: This method returns _a copy_ of the function but with the execution
    context "set" to the argument that's passed to `bind`. It looks like this:
    `sayHello.bind(greenFrog)("Hello") //=> "Mr. GreenFrog says *Hello* to you
