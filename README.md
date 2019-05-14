@@ -21,7 +21,7 @@ you see the terms.
 1. Execution Context: When JavaScript functions run, they have an associated
    JavaScript `Object` that goes along with them which they can access by the
    keyword `this`.
-2. `this`: Inside a function, `this` is the `Object` represents the function's
+2. `this`: Inside a function, `this` is the `Object` that represents the function's
    execution context
 3. `call`: This is a method _on a function_ which calls the function, just like
    `()`. You provide a new execution context as the first argument,
