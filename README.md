@@ -57,7 +57,7 @@ Back in the old days (the 1960s and earlier) computers didn't have much memory.
 Records were stored on, if you can even believe this, small paper cards called
 punch-cards. They looked like this:
 
-<img src="https://en.wikipedia.org/wiki/Punched_card#/media/File:Used_Punchcard_(5151286161).jpg" alt="Image of a punched card, used in early computers" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Used_Punchcard_%285151286161%29.jpg/800px-Used_Punchcard_%285151286161%29.jpg" alt="Image of a punched card, used in early computers" />
 
 These cards, or "records," often had information on them in "fields." In the
 `first_name` field you'd find a first name, etc. So when a business needed to
@@ -110,7 +110,7 @@ In fact, a program to do `map` and `reduce` operations at scale on a cloud was
 standardized in the 2000s. Guess what it's called? [`mapReduce`][mapreduce]
 &mdash; and you should know why. It was pioneered and advanced as part of the
 secret sauce that made a small little company from Mountain View, California
-called Google become the giant it is today. Today you can use it under the
+called Google to become the giant it is today. Today you can use it under the
 name of [Apache Hadoop][Hadoop]
 
 The "Go" programming language, argued by some to be the next Java as of 2019,
