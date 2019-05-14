@@ -28,7 +28,7 @@ you see the terms.
    traditionally called `thisArg`, and the arguments you want to send to the
    function after the `thisArg`. An invocation of `call` looks like:
    `Calculator.sum.call(multilingualMessages, 1, 2)`
-3. `apply`: This is a method _on a function_ which calls the function, just like
+3. `apply`: This is a method _on a function_ that calls the function, just like
    `()`. You provide a new execution context as the first argument,
    traditionally called `thisArg`, and the arguments you want to send to the
    function ***as an `Array`*** after the `thisArg`. An invocation of `call`
@@ -39,12 +39,12 @@ you see the terms.
     all."`
 
 Printing up these definitions is what _most_ JavaScript documentation does.
-People accept these as truth and shrug and muddle their way through. We think
-it can be done better.
+People accept these as truth and shrug and muddle their way through living in a
+state of fear when they write in JavaScript &mdash; but that won't be you!
 
 In this lab, we're going to practice what we've already learned about
 JavaScript to build a time-card application, guided by tests. This application
-is an example of a "record-oriented" application, which we'll explain below.
+is an example of a "record-oriented" application, a term we'll explain below.
 Once we have a working application, we'll show how execution context, `this`,
 `call`, `apply` and `bind` can DRY up our code.
 
@@ -57,30 +57,30 @@ Back in the old days (the 1960s and earlier) computers didn't have much memory.
 Records were stored on, if you can even believe this, small paper cards called
 punch-cards. They looked like this:
 
-<PIC>
+<img src="https://en.wikipedia.org/wiki/Punched_card#/media/File:Used_Punchcard_(5151286161).jpg" alt="Image of a punched card, used in early computers" />
 
-These cards, or records, had information on them in "fields." In the
+These cards, or "records," often had information on them in "fields." In the
 `first_name` field you'd find a first name, etc. So when a business needed to
-figure out how much to pay each person for a week's work, they would
+figure out how much to pay each person for a week's work, something like the
+following would happen:
 
 * Load up all the employees' cards into a tray
-* Feed the tray into the computer
-* The computer would read the data on the cards
-* Calculate the hours worked for the week per card
-* Emit a new _record_ with all the old data but this a new field added like
-`wagesPaidInWeek33OfYear: 550`
-* Print out a table of the employee name and the amount owed
+* Feed the tray of cards into the computer
+* The computer would read in each card and calculate the hours worked for the week per card
+* The computer would emit a new card with all the old data but this a new field added like `wagesPaidInWeek33OfYear: 550`
+* The computer would also print out a table of the employee name and the amount owed
 
 > **ASIDE**: Come to think of it, iterating over a collection, performing a
 > transformation and emitting a new collection where every element has been
 > transformed sounds an _awful_ lot like `map` to us.
 
-Then the pay table could be taken and the payroll department and the
+Then, the emitted pay ledger could be taken to the payroll department and the
 appropriate person could write (write!) out paychecks to the employees.
 
-If the executive team needed to know how much payroll was for the company for
-this week, they'd (you guessed it!) load up all those punch cards in a tray and
-run them through a different program that calculated a total.
+Here's another use. If the executive team needed to know how much payroll cost
+the company in a given week, they'd (you guessed it!) load up all those punch
+cards in a tray and run them through a different program that calculated a
+total.
 
 > **ASIDE**: Come to think of it, iterating over a collection, performing an
 > evaluation on each element and emitting a new value based on those elements
@@ -95,18 +95,28 @@ about "records."
 
 [Record-oriented programming][rop] is a style of programming based on finding
 records and processing them so that they're updated (`map`-like) or so that
-their information is aggregated (`reduce`-like).
+their information is aggregated (`reduce`-like). "Record-oriented" isn't a
+buzzword that we hear used very much, but for these next few lessons, we'll use
+it. Ask any programmer who's worked in large scale billing (phone companies,
+insurers, etc.) or at a university (50,000 grade point averages), and you can
+bet they'll understand what the term means, though.
 
 The amazing thing is that in the 21st century this style of programming is back
 in vogue! We're not using punch cards, but the ability to spin up hundreds of
 little computers in a cloud, hand them each a bundle of records, and get
-answers back is _cutting-edge_.
+answers back and process the answers are records is _cutting-edge_!
 
 In fact, a program to do `map` and `reduce` operations at scale on a cloud was
 standardized in the 2000s. Guess what it's called? [`mapReduce`][mapreduce]
-&mdash; and you should know why. The "Go" programming language, argued by some
-to be the next Java as of 2019, is built around building and processing records
-at scale. Record-Oriented Programming is not likely to go away any time soon.
+&mdash; and you should know why. It was pioneered and advanced as part of the
+secret sauce that made a small little company from Mountain View, California
+called Google become the giant it is today. Today you can use it under the
+name of [Apache Hadoop][Hadoop]
+
+The "Go" programming language, argued by some to be the next Java as of 2019,
+is built around building and processing records at scale. Record-Oriented
+Programming is not likely to go away any time soon. Maybe it'll be the hot job
+posting buzzword any minute now!
 
 ## Lab
 
@@ -120,8 +130,8 @@ leave, the employee will "punch out."
 
 For simplicity's sake, we'll make these assumptions:
 
-1. Assume that employees always check in **and** check out
-2. Assume employees always check in and our on the hour
+1. Assume that employees always check in **and** check out.
+2. Assume employees always check in and out on the hour
 3. The time is represented on a 24-hour clock (1300 is 1:00 pm); this keeps the
    math easier and is the standard in most of the world
 4. When timestamps are needed, they will be provided as `String`s in the form:
@@ -138,7 +148,18 @@ the function, what arguments did it pass? What kind of thing did it expect
 back?
 
 Take advantage of your collection-processing strengths that you trained up over
-the last few lessons.
+the last few lessons. Also note, if you have the time, you can learn more about
+JavaScript and remove those assumptions. You can expand your learning by:
+
+* Raise an exception if a `timeIn` is found without a matching `timeOut`
+  * [Exception Handling in JavaScript][error]
+* Figure out how to turn a time stamp into a construct that allows for you to
+  handle across day and non-o'clock times
+  * [Date Class Documentation][date]
+* Raise errors if the time stamp is in an invalid format
+
+While the bar set by the tests is at one level, you can turn this into a robust
+application, if you so desire!
 
 Put your code in `index.js`.
 
@@ -159,6 +180,11 @@ programming to be optimal for the ease of testing and simplicity of code.
 ## Resources
 
 * [Record / Record-Oriented Programming][rop]
+* [JavaScript Error Class][error]
+* [JavaScript Date Class][date]
 
 [rop]: https://en.wikipedia.org/wiki/Record_(computer_science)
 [mapreduce]: https://en.wikipedia.org/wiki/MapReduce
+[Hadoop]: https://en.wikipedia.org/wiki/Apache_Hadoop
+[error]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+[date]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
