@@ -75,7 +75,8 @@ following would happen:
 > transformed sounds an _awful_ lot like `map` to us.
 
 Then, the emitted pay ledger could be taken to the payroll department and the
-appropriate person could write (write!) out paychecks to the employees.
+appropriate person could write (Write! With their hands! Using a pen and ink!)
+out paychecks to the employees.
 
 Here's another use. If the executive team needed to know how much payroll cost
 the company in a given week, they'd (you guessed it!) load up all those punch
@@ -113,10 +114,9 @@ secret sauce that made a small little company from Mountain View, California
 called Google to become the giant it is today. Today you can use it under the
 name of [Apache Hadoop][Hadoop]
 
-The "Go" programming language, argued by some to be the next Java as of 2019,
-is built around building and processing records at scale. Record-Oriented
-Programming is not likely to go away any time soon. Maybe it'll be the hot job
-posting buzzword any minute now!
+The "Go" programming language is built around building and processing records
+at scale. Record-Oriented Programming is not likely to go away any time soon.
+Maybe it'll be the hot job posting buzzword any minute now!
 
 ## Lab
 
@@ -142,14 +142,18 @@ For simplicity's sake, we'll make these assumptions:
 The lab tests will guide you toward a solution. Keep in mind, the goal is to
 understand how to "grow" an application in "record-oriented" fashion in
 JavaScript, _as well_ as pass the lab. Make sure you're learning about this app
-design while you pass the solutions. When you encounter a failing lab, look at
+design while you pass the solutions. When you encounter a failing test, look at
 how the test is calling the function that's missing or failing: how did it call
 the function, what arguments did it pass? What kind of thing did it expect
 back?
 
 Take advantage of your collection-processing strengths that you trained up over
-the last few lessons. Also note, if you have the time, you can learn more about
-JavaScript and remove those assumptions. You can expand your learning by:
+the last few lessons. 
+
+## Extending the Challenge
+
+If you have the time, you can learn more about JavaScript and remove the
+simplifying assumptions we wrote above. You can expand your learning by:
 
 * Raise an exception if a `timeIn` is found without a matching `timeOut`
   * [Exception Handling in JavaScript][error]
