@@ -177,7 +177,7 @@ the function returns.
 ### `createEmployeeRecord`
 
  * **Argument(s)**
-  * 4-element Array of a `String`, `String`, `String`, and `Number`
+  * A 4-element Array of a `String`, `String`, `String`, and `Number`
     corresponding to a first name, family name, title, and pay rate per hour
 * **Returns**
   * JavaScript `Object` with keys:
