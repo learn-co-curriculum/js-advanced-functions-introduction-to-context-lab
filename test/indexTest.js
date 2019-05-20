@@ -37,7 +37,7 @@ describe("The payroll system", function () {
     })
   })
 
-  describe("process an Array of Arrays into an Array of Employee records", function () {
+  describe("process an Array of Arrays into an Array of employee records", function () {
     it("has a function called createEmployees", function () {
       expect(createEmployees).to.exist
     })
@@ -166,7 +166,7 @@ describe("The payroll system", function () {
     })
 
     describe("allWagesFor", function () {
-      it("calculates that the employee earned 54 dollars", function () {
+      it("calculates that the employee earned 378 dollars", function () {
         cRecord = createEmployeeRecord(["Julius", "Caesar", "General", 27])
         // Earns 324
         updatedBpRecord = createTimeInEvent(cRecord, "44-03-14 0900")
