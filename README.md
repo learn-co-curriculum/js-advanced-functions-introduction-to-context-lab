@@ -188,8 +188,9 @@ the function returns.
     * `timeInEvents`
     * `timeOutEvents`
 * **Behavior**
-  * Loads `Array` elements into `Object` and initializes Arrays for storing
-    time in events and time out events
+  * Loads `Array` elements into corresponding `Object` properties.
+    _Additionally_, initialize empty `Array`s on the properties `timeInEvents`
+    and `timeOutEvents`.
 
 ### `createEmployees`
 
