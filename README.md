@@ -236,7 +236,7 @@ the function returns.
   * An employee record `Object`
   * A date of the form `"YYYY-MM-DD"`
 * **Returns**
-  * Minutes worked
+  * Hours worked, an Integer
 * **Behavior**
   * Given a date, find the number of hours elapsed between that date's
     timeInEvent and timeOutEvent
@@ -288,7 +288,7 @@ the function returns.
  * **Argument(s)**
   * `Array` of employee records
 * **Returns**
-  * Pay owed for all dates
+  * Sum of pay owed to all employees for all dates, as a number
 * **Behavior**
   * Using `wagesEarnedOnDate`, accumulate the value of all dates worked by the
     employee in the record used as context. Amount should be returned as a
