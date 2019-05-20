@@ -148,7 +148,7 @@ the function, what arguments did it pass? What kind of thing did it expect
 back?
 
 Take advantage of your collection-processing strengths that you trained up over
-the last few lessons. 
+the last few lessons.
 
 ## Extending the Challenge
 
