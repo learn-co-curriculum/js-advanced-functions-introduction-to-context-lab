@@ -236,7 +236,7 @@ the function returns.
   * An employee record `Object`
   * A date of the form `"YYYY-MM-DD"`
 * **Returns**
-  * Hours worked, an Integer
+  * Hours worked, an `Integer`
 * **Behavior**
   * Given a date, find the number of hours elapsed between that date's
     timeInEvent and timeOutEvent
