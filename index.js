@@ -24,7 +24,8 @@ const createTimeInEvent = (employeeRecord, timeIn) => {
         date: time[0]
     }
     employeeRecord.timeInEvents.push(newEvent)
-    return employeeRecord
+    // return employeeRecord
+    console.log(timeIn)
 }
 //fills time out event
 const createTimeOutEvent = (employeeRecord, timeOut) => {
