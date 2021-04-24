@@ -17,13 +17,16 @@ const createEmployeeRecords = arrArr => {
 
 const createTimeInEvent = (arrays, timeIn) => {
     const time = timeIn.split(' ')
-    let newEvent = {
-        type: 'TimeIn',
-        hour: time[1],
-        date: time[0]
-    }
-    return newEvent
+    console.log(time)
+    // let newEvent = {
+    //     type: 'TimeIn',
+    //     hour: time[1],
+    //     date: time[0]
+    // }
+    // return newEvent
 }
+// console.log(createTimeInEvent())
+
 const createTimeOutEvent = () => {}
 const hoursWorkedOnDate = () => {}
 const wagesEarnedOnDate = () => {}
