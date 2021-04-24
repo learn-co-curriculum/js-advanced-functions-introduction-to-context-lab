@@ -1,4 +1,5 @@
 // Your code here
+//Creates standard ouput
 const createEmployeeRecord = array => {
     let testEmployee = {
         firstName: array[0],
@@ -10,11 +11,11 @@ const createEmployeeRecord = array => {
 };
 return testEmployee
 };
-
+//Creates array of arrays
 const createEmployeeRecords = arrArr => {
     return arrArr.map(array => createEmployeeRecord(array))
 }
-
+//fills time in event
 const createTimeInEvent = (employeeRecord, timeIn) => {
     const time = timeIn.split(' ')
     let newEvent = {
@@ -25,7 +26,7 @@ const createTimeInEvent = (employeeRecord, timeIn) => {
     employeeRecord.timeInEvents.push(newEvent)
     return employeeRecord
 }
-
+//fills time out event
 const createTimeOutEvent = (employeeRecord, timeOut) => {
     const time = timeOut.split(' ')
     let newEvent = {
@@ -36,29 +37,29 @@ const createTimeOutEvent = (employeeRecord, timeOut) => {
     employeeRecord.timeOutEvents.push(newEvent)
     return employeeRecord
 }
+// returns hours worked
 const hoursWorkedOnDate = (record, date) => {
-    const timeIn = record.timeInEvents[0].hour
-    const timeOut = record.timeOutEvents[0].hour
-    const hrsWorked = (timeOut - timeIn) / 100
-    return(hrsWorked)
+    const timeIn = record.timeInEvents.find(time => date == time.date)
+    const timeOut = record.timeOutEvents.find(time => date == time.date)
+    const totalHrs = (timeOut.hour - timeIn.hour) / 100
+    return totalHrs
 }
-const wagesEarnedOnDate = (dayPay, date) => {
-    const timeIn = dayPay.timeInEvents[0].hour
-    const timeOut = dayPay.timeOutEvents[0].hour
-    const hrsWorked = (timeOut - timeIn) / 100
-    const payRate = dayPay.payPerHour
-    return payRate * hrsWorked
+// returns pay on specific dates
+const wagesEarnedOnDate = (employee, payDate) => {
+    const payRate = employee.payPerHour
+    const hrsWorked = hoursWorkedOnDate(employee, payDate)
+    const totalWages = payRate * hrsWorked
+    return totalWages
 }
-const allWagesFor = (times) => {
-    const dayIn = times.timeInEvents[0].date
-    const dayOut = times.timeInEvents[1].date
-    const timeIn = times.timeInEvents[0].hour
-    const timeOut = times.timeOutEvents[0].hour
-    
-    const payRate = times.payPerHour
-    console.log(times)
-    //return payRate * hrsWorked
+// returns pay for all dates
+const allWagesFor = (wagesEarned, dates) => {
+    const dayInRecords = wagesEarned.timeInEvents
+    const dayOutRecords = wagesEarned.timeOutEvents
+    const daysIn = dayInRecords.find(x => dates = x.date)
+    const daysOut = dayOutRecords.find(x => dates = x.date)
+    console.log(wagesEarnedOnDate(wagesEarned, dates))
 }
+
 const calculatePayroll = () => {}
 const findEmployeeByFirstName = () => {}
 
