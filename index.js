@@ -52,11 +52,11 @@ const wagesEarnedOnDate = (dayPay, date) => {
 const allWagesFor = (times) => {
     const dayIn = times.timeInEvents[0].date
     const dayOut = times.timeInEvents[1].date
-    const timeIn = dayIn.timeInEvents[0].hour
-    const timeOut = dayOut.timeOutEvents[0].hour
-
+    const timeIn = times.timeInEvents[0].hour
+    const timeOut = times.timeOutEvents[0].hour
+    
     const payRate = times.payPerHour
-    console.log(timeIn)
+    console.log(times)
     //return payRate * hrsWorked
 }
 const calculatePayroll = () => {}
