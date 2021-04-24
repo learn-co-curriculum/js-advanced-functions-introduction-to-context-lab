@@ -42,12 +42,23 @@ const hoursWorkedOnDate = (record, date) => {
     const hrsWorked = (timeOut - timeIn) / 100
     return(hrsWorked)
 }
-const wagesEarnedOnDate = (dayWage, date) => {
-    console.log(dayWage)
-
-
+const wagesEarnedOnDate = (dayPay, date) => {
+    const timeIn = dayPay.timeInEvents[0].hour
+    const timeOut = dayPay.timeOutEvents[0].hour
+    const hrsWorked = (timeOut - timeIn) / 100
+    const payRate = dayPay.payPerHour
+    return payRate * hrsWorked
 }
-const allWagesFor = () => {}
+const allWagesFor = (times) => {
+    const dayIn = times.timeInEvents[0].date
+    const dayOut = times.timeInEvents[1].date
+    const timeIn = dayIn.timeInEvents[0].hour
+    const timeOut = dayOut.timeOutEvents[0].hour
+
+    const payRate = times.payPerHour
+    console.log(timeIn)
+    //return payRate * hrsWorked
+}
 const calculatePayroll = () => {}
 const findEmployeeByFirstName = () => {}
 
