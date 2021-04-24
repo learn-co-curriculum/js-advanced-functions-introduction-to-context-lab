@@ -15,20 +15,35 @@ const createEmployeeRecords = arrArr => {
     return arrArr.map(array => createEmployeeRecord(array))
 }
 
-const createTimeInEvent = (arrays, timeIn) => {
+const createTimeInEvent = (employeeRecord, timeIn) => {
     const time = timeIn.split(' ')
-    console.log(time)
-    // let newEvent = {
-    //     type: 'TimeIn',
-    //     hour: time[1],
-    //     date: time[0]
-    // }
-    // return newEvent
+    let newEvent = {
+        type: 'TimeIn',
+        hour: parseInt(time[1]),
+        date: time[0]
+    }
+    employeeRecord.timeInEvents.push(newEvent)
+    return employeeRecord
 }
-// console.log(createTimeInEvent())
 
-const createTimeOutEvent = () => {}
-const hoursWorkedOnDate = () => {}
+const createTimeOutEvent = (employeeRecord, timeOut) => {
+    const time = timeOut.split(' ')
+    let newEvent = {
+        type: 'TimeOut',
+        hour: parseInt(time[1]),
+        date: time[0]
+    }
+    employeeRecord.timeOutEvents.push(newEvent)
+    return employeeRecord
+}
+const hoursWorkedOnDate = (record, date) => {
+    const timeIn = record.timeInEvents[0].hour
+    const timeOut = record.timeOutEvents[0].hour
+    const hrsWorked = (timeOut - timeIn) / 100
+    return(hrsWorked)
+
+
+}
 const wagesEarnedOnDate = () => {}
 const allWagesFor = () => {}
 const calculatePayroll = () => {}
