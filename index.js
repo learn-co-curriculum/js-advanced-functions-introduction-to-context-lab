@@ -61,13 +61,16 @@ const allWagesFor = (employee) => {
 }
 
 const calculatePayroll = (recordArr) => {
-    let date;
-    const payRoll = recordArr.map(x => x.timeInEvents)
-    const days = payRoll.map(x => x.map(y => date = y.date))
-    const wages = wagesEarnedOnDate(recordArr, date)
-    console.log(wages)
+    // const payRoll = recordArr.map(x => x.timeInEvents)
+    // const days = payRoll.map(x => x.map(y => date = y.date))
+    // const wages = wagesEarnedOnDate(recordArr, days)
+    // console.log(wages)
 }
-const findEmployeeByFirstName = () => {}
+const findEmployeeByFirstName = (array, firstName) => {
+    firstName = array.find(x => x.firstName)
+
+    return firstName
+}
  
 
 
