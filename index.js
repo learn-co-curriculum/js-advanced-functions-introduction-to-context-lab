@@ -52,17 +52,23 @@ const wagesEarnedOnDate = (employee, payDate) => {
     return totalWages
 }
 // returns pay for all dates
-const allWagesFor = (wagesEarned, dates) => {
-    const dayInRecords = wagesEarned.timeInEvents
-    // const dayOutRecords = wagesEarned.timeOutEvents
-    // const daysIn = dayInRecords.find(x => dates = x.date)
-    // const daysOut = dayOutRecords.find(x => dates = x.date)
-    console.log(dayInRecords)
+const allWagesFor = (employee) => {
+    const dayRecords = employee.timeInEvents
+    const days = dayRecords.map(x => x.date)
+    const wages = days.map(date => wagesEarnedOnDate(employee, date))
+    const allWages = wages.reduce((acc, wages) => acc + wages)
+    return(allWages)
 }
 
-const calculatePayroll = () => {}
+const calculatePayroll = (recordArr) => {
+    let date;
+    const payRoll = recordArr.map(x => x.timeInEvents)
+    const days = payRoll.map(x => x.map(y => date = y.date))
+    const wages = wagesEarnedOnDate(recordArr, date)
+    console.log(wages)
+}
 const findEmployeeByFirstName = () => {}
-
+ 
 
 
   // let employeeRecords = 
