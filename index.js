@@ -54,10 +54,10 @@ const wagesEarnedOnDate = (employee, payDate) => {
 // returns pay for all dates
 const allWagesFor = (wagesEarned, dates) => {
     const dayInRecords = wagesEarned.timeInEvents
-    const dayOutRecords = wagesEarned.timeOutEvents
-    const daysIn = dayInRecords.find(x => dates = x.date)
-    const daysOut = dayOutRecords.find(x => dates = x.date)
-    console.log(wagesEarnedOnDate(wagesEarned, dates))
+    // const dayOutRecords = wagesEarned.timeOutEvents
+    // const daysIn = dayInRecords.find(x => dates = x.date)
+    // const daysOut = dayOutRecords.find(x => dates = x.date)
+    console.log(dayInRecords)
 }
 
 const calculatePayroll = () => {}
