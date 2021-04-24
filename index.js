@@ -41,10 +41,12 @@ const hoursWorkedOnDate = (record, date) => {
     const timeOut = record.timeOutEvents[0].hour
     const hrsWorked = (timeOut - timeIn) / 100
     return(hrsWorked)
+}
+const wagesEarnedOnDate = (dayWage, date) => {
+    console.log(dayWage)
 
 
 }
-const wagesEarnedOnDate = () => {}
 const allWagesFor = () => {}
 const calculatePayroll = () => {}
 const findEmployeeByFirstName = () => {}
