@@ -1,6 +1,5 @@
 // Your code here
-//no i will not im going to put it \/HERE
-const createEmployeeRecord = (array) => {
+const createEmployeeRecord = array => {
     let testEmployee = {
         firstName: array[0],
         familyName: array[1],
@@ -8,30 +7,29 @@ const createEmployeeRecord = (array) => {
         payPerHour: array[3],
         timeInEvents: [],
         timeOutEvents: []
-}
+};
 return testEmployee
-}
+};
 
-function createEmployeeRecords(arrArr){
+const createEmployeeRecords = arrArr => {
     return arrArr.map(array => createEmployeeRecord(array))
 }
 
-function createTimeInEvent(){
-    let testEmployee = {
-        firstName: array[0],
-        familyName: array[1],
-        title: array[2],
-        payPerHour: array[3],
-        timeInEvents: [],
-        timeOutEvents: []
+const createTimeInEvent = (arrays, timeIn) => {
+    const time = timeIn.split(' ')
+    let newEvent = {
+        type: 'TimeIn',
+        hour: time[1],
+        date: time[0]
     }
+    return newEvent
 }
-function createTimeOutEvent(){}
-function hoursWorkedOnDate(){}
-function wagesEarnedOnDate(){}
-function allWagesFor(){}
-function calculatePayroll(){}
-function findEmployeeByFirstName(){}
+const createTimeOutEvent = () => {}
+const hoursWorkedOnDate = () => {}
+const wagesEarnedOnDate = () => {}
+const allWagesFor = () => {}
+const calculatePayroll = () => {}
+const findEmployeeByFirstName = () => {}
 
 
 
