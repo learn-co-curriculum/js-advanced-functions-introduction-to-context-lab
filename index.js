@@ -24,8 +24,8 @@ const createTimeInEvent = (employeeRecord, timeIn) => {
         date: time[0]
     }
     employeeRecord.timeInEvents.push(newEvent)
-    // return employeeRecord
-    console.log(timeIn)
+    return employeeRecord
+    // console.log(timeIn)
 }
 //fills time out event
 const createTimeOutEvent = (employeeRecord, timeOut) => {
@@ -63,14 +63,18 @@ const allWagesFor = (employee) => {
 }
 
 const calculatePayroll = (recordArr) => {
-    let array = []
-    const payRoll = recordArr.map(x => x.timeInEvents)
-    const dates = payRoll.map(x => x.map(y => y.date))
-    const dateArr = dates.reduce((acc, curVal) =>{
-        return acc.concat(curVal)
-    },[])
-    console.log(dateArr.map(res => wagesEarnedOnDate(recordArr, res)))
-
+    // const payRoll = recordArr.map(x => x.timeInEvents)
+    // const dates = payRoll.map(x => x.map(y => y.date))
+    // const dateArr = dates.reduce((acc, curVal) =>{
+    //     return acc.concat(curVal)
+    // },[])
+    // console.log(recordArr)
+    // console.log(dateArr.map(res => wagesEarnedOnDate(recordArr, res)))
+    
+    return recordArr.reduce((memo, rec) => {
+        return memo + allWagesFor(rec)
+    }, 0)
+    
 }
 //finds employee by first name
 const findEmployeeByFirstName = (array, firstName) => {
