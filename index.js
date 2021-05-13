@@ -43,7 +43,9 @@ function createTimeOutEvent(employeeRecord, dateTime) {
     return employeeRecord;
 }
 
-function hoursWorkedOnDate(employeeRecord) {
+function hoursWorkedOnDate(employeeRecord, dateTime) {
+    createTimeInEvent(employeeRecord, dateTime);
+    createTimeOutEvent(employeeRecord, dateTime);
     if (employeeRecord.timeOutEvents['date'] === employeeRecord.timeInEvents['date']) {
         return employeeRecord.timeOutEvents['time'] - employeeRecord.timeInEvents['time']
     }
