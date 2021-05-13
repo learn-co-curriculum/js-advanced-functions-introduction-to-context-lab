@@ -43,10 +43,27 @@ function createTimeOutEvent(employeeRecord, dateTime) {
     return employeeRecord;
 }
 
-function hoursWorkedOnDate(employeeRecord, dateTime) {
-    createTimeInEvent(employeeRecord, dateTime);
-    createTimeOutEvent(employeeRecord, dateTime);
-    if (employeeRecord.timeOutEvents['date'] === employeeRecord.timeInEvents['date']) {
-        return employeeRecord.timeOutEvents['time'] - employeeRecord.timeInEvents['time']
-    }
+//given employee record and date to check hours work
+//employee record has timeIn and timeOut events
+//find correct timeIn event for given date and correct timeOut for given date
+//subtract out from in
+function hoursWorkedOnDate(employeeRecord, date) {
+    let timeInEvent = employeeRecord.timeInEvents.find(element => element['date'] === date)
+    let timeOutEvent = employeeRecord.timeOutEvents.find(element => element['date'] === date)
+    return (timeOutEvent['hour'] - timeInEvent['hour']) / 100;
+}
+        
+function wagesEarnedOnDate(employeeRecord, date) {
+    let timeInEvent = employeeRecord.timeInEvents.find(element => element['date'] === date)
+    let timeOutEvent = employeeRecord.timeOutEvents.find(element => element['date'] === date)
+    let totalHours = (timeOutEvent['hour'] - timeInEvent['hour']) / 100;
+    return totalHours * employeeRecord.payPerHour;
+}
+
+function allWagesFor(employeeRecord) {
+    let timeInArray = employeeRecord.timeInEvents
+    let timeOutArray = employeeRecord.timeOutEvents
+    console.log('TIME IN:', timeInArray, 'TIME OUT:', timeOutArray);
+    let matchingDatesArray = timeInArray.filter(element => timeOutArray.includes(element['date']))
+    console.log('MATCHING', matchingDatesArray)
 }
